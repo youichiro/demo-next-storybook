@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Button } from "./Button";
@@ -8,7 +8,7 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Submit</Button>;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -16,19 +16,19 @@ Default.args = {
 };
 
 export const Outlined = Template.bind({});
-Default.args = {
+Outlined.args = {
   outlined: true,
   children: 'Button',
 };
 
 export const Small = Template.bind({});
-Default.args = {
+Small.args = {
   size: 'small',
   children: 'Button',
 };
 
 export const OutlinedSmall = Template.bind({});
-Default.args = {
+OutlinedSmall.args = {
   outlined: true,
   size: 'small',
   children: 'Button',
